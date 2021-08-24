@@ -14,14 +14,12 @@ import BlogLayout from './layouts/BlogLayout/BlogLayout'
 const Routes = () => {
   return (
     <Router>
-      <Private unauthenticated="home">
-        <Set wrap={PostsLayout}>
-          <Route path="/admin/posts/new" page={PostNewPostPage} name="newPost" />
-          <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
-          <Route path="/admin/posts/{id:Int}" page={PostPostPage} name="post" />
-          <Route path="/admin/posts" page={PostPostsPage} name="posts" />
-        </Set>
-      </Private>
+      <Set wrap={PostsLayout}>
+        <Route path="/admin/posts/new" page={PostNewPostPage} name="newPost" />
+        <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
+        <Route path="/admin/posts/{id:Int}" page={PostPostPage} name="post" />
+        <Route path="/admin/posts" page={PostPostsPage} name="posts" />
+      </Set>
       <Set wrap={BlogLayout}>
         <Route path="/blog-post/{id:Int}" page={BlogPostPage} name="blogPost" />
         <Route path="/contact" page={ContactPage} name="contact" />
